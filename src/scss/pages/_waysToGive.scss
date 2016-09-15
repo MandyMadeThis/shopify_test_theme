@@ -1,0 +1,73 @@
+.waysToGiveFilters {
+  width: 100%;
+  max-width: 720px;
+  padding: 65px 0;
+  text-align: center;
+  margin: 0 auto;
+
+  @include media(portable) {
+    padding: 30px 20px;
+  }
+
+  .h5 {
+    margin-bottom: 25px;
+    letter-spacing: 1.3;
+  }
+}
+
+.waysToGiveFilters-toggle {
+  display: none;
+  color: $blue;
+  text-transform: uppercase;
+  font-family: $font;
+  font-size: 12px;
+  letter-spacing: 1.1px;
+  text-align: center;
+  height: 46px;
+  cursor: pointer;
+
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include media(portable) {
+    display: block;
+  }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    margin-left: 18px;
+    background-image: url($icon-chevron-down--blue);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 8px;
+
+    .revealToggle--revealed & {
+      background-image: url($icon-chevron-up--blue);
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 22px;
+    margin-right: 18px;
+  }
+}
+
+// Overrides for JS revealToggler on desktop/large views
+.waysToGiveFilters-inputs {
+  @include media(desk) {
+    display: block !important;
+  }
+
+  @include media(portable) {
+    display: none;
+  }
+}
+
+.waysToGive-container {
+  max-width: $container-width;
+  margin: 0 auto;
+}

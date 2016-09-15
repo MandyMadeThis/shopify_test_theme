@@ -1,0 +1,7 @@
+require('./formInputs')()
+require('./rangeSlider')()
+require('./siteHeader')()
+require('./revealToggler')()
+require('./sliders')()
+require('./sponsorshipCards')()
+require('./modals')()

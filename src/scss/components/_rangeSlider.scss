@@ -1,0 +1,56 @@
+.rangeSlider {
+  margin: 20px 0 60px 0;
+  height: 3px;
+  border: 0;
+  background: $grey-light;
+  box-shadow: none;
+
+  .noUi-background {
+    background: $grey-light;
+    box-shadow: none;
+  }
+
+  .noUi-marker-normal {
+    display: none;
+  }
+
+  .noUi-pips {
+    top: -14px;
+    & > * {
+      height: 12px;
+      width: 1px;
+      background: $grey-light;
+      z-index: -1;
+    }
+  }
+
+  .noUi-value-sub, .noUi-value-large {
+    display: none;
+  }
+
+  .noUi-connect {
+    background: $blue;
+  }
+
+  .noUi-handle {
+    position: relative;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+    padding-top: 27px;
+    text-align: center;
+    &:after {
+      display: none;
+    }
+    &:before {
+      background: $blue;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      top: 8px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

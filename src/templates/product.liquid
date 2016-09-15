@@ -1,0 +1,41 @@
+{% for tag in product.tags %}
+  {% if tag contains "birthday:" %}{% capture birthday %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+  {% if tag contains "month:" %}{% capture month %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+  {% if tag contains "age:" %}{% capture age %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+  {% if tag contains "gender:" %}{% capture gender %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+  {% if tag contains "video:" %}{% capture video %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+  {% if tag contains "mc:" %}{% capture motCode %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+  {% if tag contains "projectid:" %}{% capture projectID %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+  {% if tag contains "lang:" %}{% capture lang %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+
+  {% if tag == "no_image" %}{% capture noImage %}yes{% endcapture %}{% endif %}
+
+  {% if tag contains "favorite_subject:" %}{% capture favoriteSubject %}{{ tag | split: ":" | last }}{% endcapture %}{% endif %}
+  {% if favoriteSubject == "favorite_subject" %}{% capture favoriteSubject %}None{% endcapture %}{% endif %}
+{% endfor %}
+
+
+<div class="container">
+  <div class="center" style=>
+    
+  </div>
+  <h2>{{ product.title }}</h2>
+  {% for image in product.images %}
+    {% if forloop.first %}
+      <img src="{{ image | product_img_url: 'large' }}" alt="{{ image.alt }}" />
+    {% endif %}
+  {% endfor %}
+  {{ product.description }}
+
+  <h3>Useful Child Tags</h3>
+  <ul>
+    <li>month: {{ month }}</li>
+    <li>birthday: {{ birthday }}</li>
+    <li>age: {{ age }}</li>
+    <li>video: {{ video }}</li>
+    <li>motCode: {{ motCode }}</li>
+    <li>projectID: {{ projectID }}</li>
+    <li>lang: {{ lang }}</li>
+    <li>favoriteSubject: {{ favoriteSubject }}</li>
+  </ul>
+</div>

@@ -1,0 +1,131 @@
+<sg-section>
+  <a href="#formInputs" class="sg-h1" id="formInputs">Form Inputs &amp; Elements</a>
+  <a href="#textEmailInputs" class="sg-h3" id="textEmailInputs"> Text &amp; Email Inputs </a>
+  <sg-example>
+    <div class="formGroup">
+      <input id="name" type="text">
+      <label for="name" class="label--placeholder">First Name</label>
+    </div>
+
+    <div class="formGroup">
+      <input id="email" type="email">
+      <label for="email" class="label--placeholder">Email address</label>
+    </div>
+
+    <div class="formGroup">
+      <input id="email-error" class="js-error" type="email">
+      <label for="email-error" class="label--placeholder">Enter a valid email address</label>
+    </div>
+  </sg-example>
+
+  <a href="#emailSignUp" class="sg-h3" id="emailSignUp"> Sign Up Email Input </a>
+  <sg-example>
+    <div class="formGroup">
+      <input id="signUp" class="signUp-email" type="email">
+      <label for="signUp" class="label--placeholder">Your email address</label>
+      <input type="submit" class="signUp-submit" value="Sign up">
+    </div>
+
+    <div class="formGroup">
+      <input id="signUp" class="signUp-email js-error" type="email">
+      <label for="signUp" class="label--placeholder">Enter a valid email address</label>
+      <input type="submit" class="signUp-submit" disabled value="Sign up">
+    </div>
+  </sg-example>
+
+  <a href="#quantityInput" class="sg-h3" id="quantityInput"> Quantity Text Input </a>
+  <sg-example>
+    <div class="formGroup">
+      <input class="input--quantityInput" type="text">
+      <span class="span--quantityInput">$</span>
+    </div>
+
+    <div class="formGroup">
+      <input class="input--quantityInput" type="text" disabled>
+      <span class="span--quantityInput">$</span>
+    </div>
+  </sg-example>
+
+  <a href="#checkboxes" class="sg-h3" id="checkboxes">Checkbox Inputs</a>
+  <sg-example>
+    <div class="formGroup">
+      <label class="label-checkbox--plain">
+       Give in honour of someone
+       <input type="checkbox">
+       <span class="checkbox"></span>
+      </label>
+    </div>
+
+    <div class="formGroup">
+      <label class="label-checkRadio label-checkbox">
+        Make it monthly
+        <input type="checkbox">
+        <span class="checkbox"></span>
+      </label>
+    </div>
+  </sg-example>
+
+  <a href="#selects" class="sg-h3" id="selects">Select Inputs</a>
+  <sg-example>
+    <div class="grid">
+      <div class="grid-1of3 grid-1of1--portable">
+        <div class="select">
+          <label class="select-label" for="defaultSelectInput">Select an option</label>
+          <select class="select-input" name="defaultSelectInput" id="defaultSelectInput">
+            <option value="xsmall">Extra Small</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xlarge">Extra Large</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-1of3 grid-1of1--portable">
+        <div class="select select--iconLeft">
+          <svg class="select-icon"><use xlink:href="#icon--email"></use></svg>
+          <label class="select-label" for="defaultSelectInput">Select an option</label>
+          <select class="select-input" name="defaultSelectInput" id="defaultSelectInput">
+            <option value="xsmall">Extra Small</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xlarge">Extra Large</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-1of3 grid-1of1--portable">
+        <div class="select select--iconRight">
+          <svg class="select-icon"><use xlink:href="#icon--world"></use></svg>
+          <label class="select-label" for="defaultSelectInput">Select an option</label>
+          <select class="select-input" name="defaultSelectInput" id="defaultSelectInput">
+            <option value="xsmall">Extra Small</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xlarge">Extra Large</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </sg-example>
+
+  <a href="#radios" class="sg-h3" id="radios">Radio Inputs</a>
+  <sg-example>
+    <div class="formGroup">
+      <label class="label-checkRadio label--quantitySelect">
+         <input type="radio" name="radio--quantitySelect" class="radio--quantitySelect">
+         25
+      </label>
+      <label class="label-checkRadio label--quantitySelect">
+         <input type="radio" name="radio--quantitySelect" class="radio--quantitySelect">
+         50
+      </label>
+      <label class="label-checkRadio label--quantitySelect">
+         <input type="radio" name="radio--quantitySelect" class="radio--quantitySelect">
+         100
+      </label>
+    </div>
+  </sg-example>
+</sg-section>

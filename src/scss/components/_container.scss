@@ -1,0 +1,9 @@
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 60px;
+
+  @include media(palm) {
+    padding: 0 30px;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "shopify_api_key": "YOUR_API_KEY_GOES_HERE",
+  "shopify_api_password": "YOUR_API_PASSWORD_GOES_HERE",
+  "shopify_url": "worldvision-3.myshopify.com",
+  "theme_id": "YOUR_THEME_ID_NUMBER"
+}

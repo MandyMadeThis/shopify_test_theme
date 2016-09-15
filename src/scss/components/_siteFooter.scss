@@ -1,0 +1,102 @@
+.siteFooter-social {
+  background: #E1E1E1;
+  padding: 40px 0 28px 0;
+  text-align: center;
+  .socialIcons-socialLink {
+    background: white;
+    border-color: white;
+    margin-right: 0;
+    margin-left: 14px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover {
+      border-color: $blue;
+      svg {
+        fill: $blue;
+      }
+    }
+  }
+}
+
+.siteFooter-sitemap {
+  background: #F9F9F9;
+  padding: 40px 0 28px 0;
+  @media(max-width: 600px) {
+    display: none;
+  }
+}
+
+.siteFooter-navSection {
+  margin-bottom: 30px;
+}
+
+.siteFooter-copyright {
+  background: #F9F9F9;
+  padding: 40px 0;
+  small {
+    font-size: 10px;
+    line-height: 2;
+    color: #434343;
+    display: block;
+    margin-bottom: 20px;
+    @include media(portable) {
+      text-align: center;
+    }
+  }
+  a {
+    text-transform: none;
+  }
+}
+
+.siteFooter-sectionTitle {
+  font-size: 11px;
+  letter-spacing: 0.9px;
+  color: #333333;
+  text-transform: uppercase;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.siteFooter-navLink {
+  font-size: 12px;
+  color: #4E4E4E;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  text-transform: none;
+  display: block;
+  &:hover {
+    color: $blue;
+  }
+}
+
+.siteFooter-logos {
+  text-align: right;
+  @include media(portable) {
+    text-align: center;
+  }
+}
+
+.siteFooter-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 50px;
+  @include media(palm) {
+    margin-left: 10px;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.siteFooter-imagineCanada {
+  max-width: 94px;
+}
+
+.siteFooter-bbb {
+  max-width: 39px;
+}
+
+.siteFooter-cccc {
+  max-width: 78px;
+}

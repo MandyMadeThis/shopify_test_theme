@@ -1,0 +1,48 @@
+.searchResults {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 60%;
+  max-width: 840px;
+
+  @include media(palm) {
+    width: 100%;
+  }
+
+  .catTag {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.searchResults-item {
+  list-style: none;
+  position: relative;
+  border-bottom: solid 1px $grey-light;
+
+  &:first-child {
+    border-top: solid 1px $grey-light;
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    padding: 40px 0;
+    display: block;
+    color: $grey-dark;
+
+    &:hover {
+      color: $grey-dark;
+    }
+  }
+
+  .searchResults-heading {
+    margin-bottom: 10px;
+  }
+  
+  .searchResults-description {
+    font-size: 15px;
+    color: $grey-medium;
+  }
+}

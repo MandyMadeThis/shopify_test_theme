@@ -1,0 +1,265 @@
+// Input Wrapper
+.formGroup {
+  position: relative;
+  font-size: 0;
+  margin-bottom: 32px;
+}
+
+// Base Input Styles
+input,
+textarea,
+select {
+  transition: $base-trans;
+  display: inline-block;
+  appearance: none;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid;
+  font-size: 14px;
+  color: $grey-dark;
+  font-family: $font;
+  padding: 16px 22px;
+  max-height: 50px;
+  // Base Input Non-Valid Style (need JS validation to addClass to invalid inputs)
+  &.js-error {
+    border-color: $error-color !important;
+    + label {
+      color: $error-color;
+    }
+  }
+}
+
+// Special Input Styles
+input {
+  &[type="text"],
+  &[type="email"] {
+    border-color: $grey;
+    max-width: 385px;
+    &:focus {
+      border-color: $blue;
+    }
+    &:focus + label,
+    &.js-hasValue + label {
+      transform: translate(-22px, -40px);
+    }
+  }
+  &[type="submit"] {
+    cursor: pointer;
+    &:disabled,
+    .disabled {
+      background: $white;
+    }
+  }
+  &.signUp-email {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    max-width: 274px;
+    margin-top: 0;
+  }
+  &.signUp-submit {
+    max-width: 111px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    height: 51px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $white;
+    background: $blue;
+    &:disabled,
+    &:disabled:hover {
+      background: $grey;
+      color: $white;
+    }
+    &:hover {
+      background: $blue-dark;
+    }
+  }
+  &.input--quantityInput {
+    max-width: 166px;
+    padding: 16px 22px 16px 72px;
+    &:focus,
+    &.js-hasValue {
+      + .span--quantityInput {
+        background: $blue;
+        color: $white;
+        border-color: $blue;
+      }
+    }
+  }
+  // Hide the default inputs because our labels & spans are the styled elements
+  &[type="checkbox"],
+  &[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  &[type="checkbox"] {}
+  &[type="radio"] {}
+  &[type="range"] {}
+}
+
+// Disabled Input Styles
+input[type="text"],
+input[type="email"],
+input[type="checkbox"],
+input[type="radio"],
+select {
+  &:disabled,
+  .disabled {
+    cursor: not-allowed;
+    background: $white;
+    border-color: $grey-light;
+    background: $white;
+    color: $grey;
+  }
+}
+
+// Label Styles
+label {
+  transition: $nice-trans;
+  color: $grey;
+  font-size: 14px;
+}
+
+.label--placeholder {
+  position: absolute;
+  left: 22px;
+  top: 19px;
+}
+
+.label-checkbox--plain {
+  color: $grey-dark;
+}
+
+.label-checkRadio {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 18px 16px;
+  color: $grey-dark;
+  border: 1px solid $grey;
+  border-radius: 3px;
+
+  &.label-checkbox {
+    padding: 8px 16px 18px;
+
+    &.js-hasValue {
+      border-color: $blue;
+      color: $blue;
+    }
+  }
+
+  &.label--quantitySelect {
+    min-width: 70px;
+    margin-right: 8px;
+
+    &:before {
+      content: '\0024';
+      margin-right: 10px;
+    }
+
+    &.js-hasValue,
+    &:hover {
+      color: $white;
+      background: $blue;
+      border-color: $blue;
+      &:before {
+        color: $white;
+      }
+    }
+  }
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: solid 1px #9b9b9b;
+  display: inline-block;
+  margin-left: 15px;
+  position: relative;
+  top: 5px;
+
+  input:checked + & {
+    background: $blue;
+    border-color: $blue;
+
+    &:before {
+      content:"";
+      background-image: url($check--white);
+      background-repeat: no-repeat;
+      background-size: 95%;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.span--quantityInput {
+  transition: $base-trans;
+  font-family: $font;
+  font-size: 14px;
+  position: absolute;
+  background: $grey-light;
+  color: $grey-dark;
+  border: 1px solid $grey;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  padding: 16px 22px;
+  input:disabled + & {
+    color: $grey;
+    background: $grey-light;
+    border-color: $grey-light;
+  }
+}
+
+// Select Input Styles
+select {
+  border-color: #999999;
+  background-color: white;
+  background-image: url($icon-chevron-down--grey);
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+  .select--iconLeft > & {
+    padding-left: 45px;
+  }
+  .select--iconRight > & {
+    padding-right: 70px;
+  }
+}
+
+.select {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.select-label {
+  font-size: 18px;
+  color: #333333;
+  letter-spacing: 0.1px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.select-icon {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  fill: #888888;
+  pointer-events: none;
+  .select--iconRight > & {
+    left: auto;
+    right: 35px;
+  }
+}

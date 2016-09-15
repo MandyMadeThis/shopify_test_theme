@@ -1,0 +1,254 @@
+.sponsorshipCard {
+  position: relative;
+  background: $white;
+  box-shadow: 0 2px 4px 0 $grey-light;
+
+  @include media(palm) {
+    display: block;
+    margin: 0;
+    padding: 112px 30px 32px;
+  }
+
+  button,
+  .textLink--scrollDown {
+    cursor: pointer;
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+
+  .textLink--scrollDown {
+    display: none;
+    bottom: 44px;
+  }
+
+  &:hover,
+  &.sponsorshipCard--selected {
+    @include media(palm) {
+      .sponsorshipCard-iconInfoBlockWrap {
+        .iconInfoBlock > * {
+          color: $white;
+          fill: $white;
+        }
+      }
+
+      .sponsorshipCard-name {
+        color: $white;
+      }
+    }
+
+    .sponsorshipCard-image {
+      width: 208px;
+      height: 208px;
+      transform: translateX(-50%) translateY(-38px);
+
+      @include media(palm) {
+        width: 125px;
+        height: 125px;
+        transform: translateX(-50%) translateY(-23px);
+      }
+    }
+
+    .sponsorshipCard-bioWrap {
+      opacity: 1;
+      visibility: visible;
+      z-index: 3;
+
+      > * {
+        z-index: 3;
+      }
+
+      @include media(palm) {
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+
+  &.sponsorshipCard--selected {
+    background: $blue;
+    color: $white;
+
+    .sponsorshipCard-name {
+      color: $white;
+    }
+
+    .sponsorshipCard-bioWrap {
+      background: $blue;
+      color: $white;
+
+      &:after {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        @include triangle(61px 28px, $blue, down);
+        animation: 0.75s $base-ease sponsorshipArrowTapDown;
+      }
+
+      .button--small {
+        display: none;
+      }
+
+      .textLink--scrollDown {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.sponsorshipCard,
+.sponsorshipCard-bioWrap {
+  border-radius: 3px;
+  padding: 112px 40px 32px;
+  max-width: 360px;
+  min-height: 440px;
+  text-align: center;
+}
+
+.sponsorshipCard-bioWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $white;
+  padding-top: 137px;
+  transition: $base-trans;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+
+  @include media(palm) {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    padding: 0;
+    margin: 18px auto 70px;
+    min-height: initial;
+    transition: none;
+    z-index: 3;
+  }
+
+  > * {
+    position: relative;
+    z-index: -1;
+
+    @include media(palm) {
+      z-index: 3;
+    }
+  }
+
+  &:after {
+    transition: $base-trans;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -28px;
+    transform: translate(-50%, -12px);
+    @include triangle(61px 28px, $white, down);
+    z-index: 2;
+    opacity: 0;
+  }
+}
+
+.sponsorshipCard-name {
+  font-size: 28px;
+  position: relative;
+  z-index: 5;
+}
+
+.sponsorshipCard-image {
+  @include background-cover-top;
+  width: 170px;
+  height: 170px;
+  border: 2px solid $white;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: -70px;
+  transition: $base-trans;
+  transform: translateX(-50%);
+  overflow: hidden;
+  z-index: 4;
+
+  @include media(palm) {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+  }
+}
+
+.sponsorshipCard-videoLink {
+  width: 45px;
+  height: 45px;
+  background: $blue;
+  border-radius: 50%;
+  border: 2px solid $white;
+  padding: 0px 10px;
+  fill: $white;
+  position: absolute;
+  left: 90px;
+  top: 55px;
+  z-index: 5;
+
+  @include media(palm) {
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left: 95px;
+  }
+}
+
+.sponsorshipCard-iconInfoBlockWrap,
+.sponsorshipCard-bio {
+  text-align: left;
+  margin: 18px auto;
+
+  @include media(palm) {
+    margin: 18px auto 25px;
+  }
+}
+
+.sponsorshipCard-bio {
+  @include media(palm) {
+    padding-top: 18px;
+    border-top: 1px solid $grey-light;
+
+    .sponsorshipCard--selected & {
+      border-top-color: $white;
+    }
+  }
+}
+
+.sponsorshipCard-close {
+  position: absolute;
+  cursor: pointer;
+  width: 65px;
+  height: 65px;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  display: none;
+
+ .sponsorshipCard--selected & {
+  display: block;
+ }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: $white;
+  }
+
+  &:before {
+    transform: translate(15px, 30px) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(15px, 30px) rotate(-45deg);
+  }
+}

@@ -1,0 +1,34 @@
+<sg-section>
+  <a href="#revealToggle" class="sg-h1" id="revealToggle">Reveal Toggle</a>
+  <sg-p>Reusable classes to reveal and hide content</sg-p>
+  <sg-example>
+    <div class="filtersBlock">
+      <div class="filtersBlock-wrapper">
+        <sg-placeholder>Placeholder Content</sg-placeholder>
+      </div>
+      <div class="filtersBlock-toggler revealToggle-toggle"><span class="filtersBlock-text"><span class="js-change">Show</span> additional options</span></div>
+      <div class="filtersBlock-wrapper revealToggle-hide">
+        <sg-placeholder>Placeholder Content</sg-placeholder>
+      </div>
+    </div>
+
+    <script>
+      (function($) {
+        var parent = $('.filtersBlock'),
+            toggle = $('.revealToggle-toggle'),
+            textTarget = $('.js-change'),
+            hideText  = 'Hide ',
+            showText = 'Show ';
+
+            toggle.on('click', function(){
+              //Slightly odd logic, but class is only added after click, so this is correct
+              if (!parent.hasClass('revealToggle--revealed')) {
+                textTarget.text(hideText);
+              } else {
+                textTarget.text(showText);
+              }
+            });
+      })(jQuery);
+    </script>
+  </sg-example>
+</sg-section>

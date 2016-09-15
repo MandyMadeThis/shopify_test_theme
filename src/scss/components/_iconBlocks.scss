@@ -1,0 +1,35 @@
+// Stacked icons with info centred underneath
+.iconBlock {
+  text-align: center;
+}
+
+.iconBlock-headline {
+  margin: 14px 0 10px;
+  font-size: 22px;
+  letter-spacing: 2.6px;
+}
+
+.iconBlock-icon {
+  display: inline-block;
+  width: 88px;
+  height: 88px;
+  padding: 20px;
+  border-radius: 50%;
+  border: 2px solid $grey-light;
+
+  @include media(palm) {
+    border: none;
+    padding-bottom: 10px;
+  }
+
+  svg {
+    fill: $blue;
+  }
+}
+
+.iconBlock-subtext {
+  line-height: 1;
+  font-size: 12px;
+  color: $black;
+  margin: 0;
+}

@@ -1,0 +1,211 @@
+// 1. BASIC CARD STYLES
+// 2. CATEGORY CARDS (USUSALLY IN HERO BLOCKS)
+// 3. BASIC IMAGE CARDS (WAYS-TO-GIVE GRID ITEMS)
+// 3A. IMAGE CARD STACKS (WAYS-TO-GIVE GRID, SINGLE ITEMS)
+// 3B. IMAGE CARD FEATURED (WAYS-TO-GIVE GRID, DOUBLE ITEMS)
+
+//////////////////////////////
+//// 1. BASIC CARD STYLES ////
+//////////////////////////////
+.card {
+  position: relative;
+  display: inline-block;
+  background: rgba($white, 0.8);
+  border-radius: 3px;
+  text-align: center;
+  padding: 38px;
+  transition: $base-trans;
+
+  p {
+    margin: 0;
+  }
+}
+
+.card-heading {
+  margin: 27px 0 25px;
+
+  @include media(palm) {
+    font-size: 25px;
+  }
+}
+
+///////////////////////////
+//// 2. CATEGORY CARDS ////
+///////////////////////////
+.card--category {
+  background: $white;
+  text-align: left;
+  padding: 32px 47px 32px 32px;
+  max-width: 500px;
+
+  @include media(portable) {
+    text-align: center;
+    padding: 25px 32px 32px;
+  }
+}
+
+//////////////////////////////
+//// 3. BASIC IMAGE CARDS ////
+//////////////////////////////
+.card--imageCard {
+  background: $white;
+  box-shadow: 0 2px 4px 0 $grey-light;
+  min-height: 430px;
+  padding: 0;
+  margin: 20px;
+
+  @media (max-width: 600px) {
+    margin: 20px 25px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 17px 0 $grey-light;
+  }
+
+  .catTag {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .card-heading {
+    margin: 0;
+  }
+
+  p {
+    margin: 35px 0;
+  }
+}
+
+.card-image {
+  @include background-cover;
+  display: block;
+}
+
+.card-innerFlexWrapper {
+  @include flex-center;
+  flex-wrap: wrap;
+}
+
+.card-textWrapper {
+  text-align: center;
+  padding: 35px 40px;
+}
+
+///////////////////////////////
+//// 3A. IMAGE CARD STACKS ////
+///////////////////////////////
+.card--stack {
+  flex: 1 1 calc(33.3% - 40px);
+
+  &:last-of-type {
+    flex: 0 1 calc(33.3% - 40px);
+  }
+
+  @include media(portable) {
+    order: 2;
+    flex: 1 1 calc(50% - 40px);
+
+    &:last-of-type {
+      flex: 0 1 calc(50% - 40px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex: 1 1 calc(100% - 50px);
+
+    &:last-of-type {
+      flex: 1 1 calc(100% - 50px);
+    }
+  }
+
+  .card-image {
+    min-height: 200px;
+
+    @media (max-width: 600px) {
+      min-height: 153px;
+    }
+  }
+}
+
+/////////////////////////////////
+//// 3B. IMAGE CARD FEATURED ////
+/////////////////////////////////
+.card--featured {
+  @include flex-center;
+  flex: 1 1 calc(66.6% - 40px);
+
+  @include media(portable) {
+    order: 1;
+    flex: 1 1 calc(100% - 80px);
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    flex: 1 1 calc(100% - 50px);
+  }
+
+  .card-innerFlexWrapper,
+  .card-image {
+    width: 50%;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  .card-image {
+    min-height: 430px;
+    height: 100%;
+
+    @media (max-width: 600px) {
+      width: 100%;
+      height: initial;
+      min-height: 300px;
+    }
+  }
+}
+
+.card--featuredImageLeft {
+  .catTag {
+    left: 75%;
+  }
+
+  .card-image {
+    order: 1;
+
+    @include media(portable) {
+      order: 2;
+    }
+  }
+
+  .card-innerFlexWrapper {
+    order: 2;
+
+    @media (max-width: 600px) {
+      order: 1;
+    }
+  }
+}
+
+.card--featuredImageRight {
+  .catTag {
+    left: 25%;
+  }
+}
+
+.card--featuredImageLeft,
+.card--featuredImageRight {
+  @media (max-width: 600px) {
+    .catTag {
+      top: 0;
+      left: 50%;
+    }
+
+    .card-innerFlexWrapper {
+      padding-top: 65px;
+    }
+  }
+}

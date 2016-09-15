@@ -1,0 +1,82 @@
+button, .button {
+  position: relative;
+  cursor: pointer;
+  -moz-osx-font-smalloothing: grayscale;
+  -webkit-font-smalloothing: antialiased;
+  background: $blue;
+  border-radius: 100px;
+  border: 1.5px solid transparent;
+  color: $white;
+  display: inline-block;
+  font-family: $font-semi-bold;
+  letter-spacing: 1.1px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  transition: $base-trans;
+  outline: none;
+  padding: 17px 46px;
+  font-size: 13px;
+  white-space: nowrap;
+
+  &:hover {
+    background: $blue-dark;
+    color: $white;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &.button--disabled,
+  &.button--disabled:hover {
+    background: $blue;
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.button-indicator {
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: 0;
+  text-align: center;
+  padding: 5px 0;
+  min-width: 25px;
+  height: 25px;
+  background: white;
+  border: 1px solid $blue;
+  color: $blue;
+}
+
+.button--alternate {
+  background: $white;
+  color: $blue;
+  border-color: $blue;
+
+  .button-indicator {
+    background: $blue;
+    border-color: $white;
+    color: $white;
+  }
+
+  &:hover {
+    background: $blue;
+    color: $white;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &.button--disabled,
+  &.button--disabled:hover {
+    cursor: not-allowed;
+    border-color: $grey;
+    background: $white;
+    color: $grey;
+  }
+}
+
+.button--small {
+  font-size: 12px;
+  letter-spacing: 0.9px;
+  padding: 12px 24px;
+}

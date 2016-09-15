@@ -1,0 +1,179 @@
+@media (max-width: $mobileNavBreakpoint) {
+  .siteHeader-basketText,
+  .siteHeader-searchToggle,
+  .siteHeader-searchInstructions,
+  .siteHeader-searchButton,
+  .siteHeader-topbar {
+    display: none;
+  }
+
+  .siteHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 60px;
+    background: $white;
+    z-index: 9999;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  // Top Padding = height of fixed mobile header 
+  body {
+    padding-top: 60px;
+  }
+
+  .siteHeader-main {
+    min-height: 60px;
+    position: relative;
+  }
+
+  .siteHeader-searchInput {
+    input {
+      background: white;
+      padding: 14px;
+      padding-right: 45px;
+      font-size: 14px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+  }
+
+  .siteHeader-searchIcon {
+    left: auto;
+    right: 20px;
+    stroke: #999;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+  }
+
+  .siteHeader-searchBar {
+    padding: 12px 0;
+    display: none !important; // overwrite Desktop JS toggling on mobile
+    .siteHeader--navVisible & {
+      display: block !important; // overwrite Desktop JS toggling on mobile
+    }
+  }
+
+  .siteHeader-hamburger {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 23px;
+    height: 19px;
+    cursor: pointer;
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: $blue;
+      height: 1px;
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+    .siteHeader--navVisible & {
+      &:before {
+        transform: rotate(45deg);
+        top: 50%;
+      }
+      &:after {
+        transform: rotate(-45deg);
+        bottom: 50%;
+      }
+
+    }
+  }
+
+  .siteHeader-hamburgerInner {
+    background: $blue;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+    .siteHeader--navVisible & {
+      opacity: 0;
+    }
+  }
+
+  .siteHeader-basket {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 14px;
+    &:hover {
+      background: $white;
+      border-color: transparent;;
+    }
+  }
+
+  .siteHeader-basketIcon {
+    width: 30px;
+    height: 30px;
+    .siteHeader-basket:hover & {
+      stroke: $blue;
+    }
+  }
+
+  .siteHeader-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 112px;
+    transform: translate(-50%, -50%);
+  }
+
+  .siteHeader-navItem {
+    color: white;
+    display: block;
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid $white;
+    margin: 0 32px;
+    letter-spacing: 1.2px;
+    &:hover {
+      border-bottom-color: white;
+    }
+    .siteHeader-nav > &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .siteHeader-navExtra {
+    display: block;
+  }
+
+  .siteHeader-navItem--flushLeft {
+    margin-right: 0;
+  }
+
+  .siteHeader-navItem--flushRight {
+    margin-left: 0;
+    text-align: right;
+  }
+
+  .siteHeader-nav {
+    overflow: auto;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    height: 0;
+    left: 0;
+    width: 100%;
+    background: $blue;
+  }
+}

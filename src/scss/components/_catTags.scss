@@ -1,0 +1,15 @@
+                    // Category Tags
+.catTag {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: $white;
+  font-size: 9px;
+  padding: 7px 14px;
+
+  &.catTag--sponsor {background-color: $orange;}
+  &.catTag--featCause {background-color: $orange-dark;}
+  &.catTag--gift {background-color: $blue-light;}
+  &.catTag--donation {background-color: $green;}
+}

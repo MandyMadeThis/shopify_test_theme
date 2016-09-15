@@ -1,0 +1,12 @@
+  <div class="grid grid--middle grid--center">
+    <div class="grid1of2">
+      <h2>List of collections</h2>
+      <ul>
+        {% for collection in collections %}
+        <li><a href="/collections/{{ collection.handle }}">{{ collection.title }}</a>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  
+

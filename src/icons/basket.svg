@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="23px" viewBox="0 0 30 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-basket</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Designs" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="ODP-Mobile" transform="translate(-30.000000, -31.000000)">
+            <g id="Group-16" transform="translate(30.000000, 21.000000)">
+                <g id="icon-basket" transform="translate(0.000000, 10.000000)">
+                    <path d="M29.319,5.38408095 L27.7450714,18.0461286 C27.4825714,20.0909381 25.7736429,21.9725571 23.7507857,21.9725571 L6.10328571,21.9725571 C4.08042857,21.9725571 2.3715,20.0909381 2.11007143,18.0461286 L0.536142857,5.38408095 L29.319,5.38408095 L29.319,5.38408095 Z" id="Stroke-1"></path>
+                    <path d="M18.7243929,0.547619048 L24.8765357,8.99628571" id="Stroke-3"></path>
+                    <path d="M11.1303214,0.547619048 L4.97817857,8.99628571" id="Stroke-5"></path>
+                    <path d="M10.1344286,9.18554286 L10.1344286,18.5169714" id="Stroke-7"></path>
+                    <path d="M15.0591429,9.18554286 L15.0591429,18.5169714" id="Stroke-9"></path>
+                    <path d="M19.9838571,9.18554286 L19.9838571,18.5169714" id="Stroke-11"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,71 @@
+///////////////////////
+//// BASE SETTINGS ////
+///////////////////////
+$base-font-size: 16px;
+$gutter: 30px;
+$container-width: 1440px;
+
+///////////////////////
+//// BREAKPOINTS ////
+///////////////////////
+$breakpoints: (
+  palm: '(max-width: 480px)',
+  lap: '(min-width: 481px) and (max-width: 1023px)',
+  desk: '(min-width: 1024px)',
+  portable: '(max-width: 1023px)',
+  large: '(min-width: 481px)'
+);
+
+$mobileNavBreakpoint: 1100px;
+
+//////////////////
+//// COLOURS ////
+/////////////////
+$orange-dark: #CC6600;
+$orange: #ff6600;
+$blue-dark: #00476B;
+$blue: #006699;
+$blue-light: #6699CC;
+$green: #999900;
+$white-dark: #F9F9F9;
+$white: #FFFFFF;
+$red: #D0021B;
+$error-color: $red;
+
+// GREYS
+$black: #000000;
+$grey-dark: #333333;
+$grey-medium: #666666;
+$grey-smoke: #888888;
+$grey: #999999;
+$grey-light: #EDEDED;
+$base-background-color: $white;
+
+// LINK COLORS
+$base-link-color: $blue;
+$hover-link-color: $blue-dark;
+
+///////////////////////////////
+//// TYPEPOGRAPHY SETTINGS ////
+///////////////////////////////
+$base-line-height: 1;
+$paragraph-line-height: 1.6;
+$base-font-color: $grey-dark;
+$font: "Gill Sans W01 Book", Arial, Calibri, Trebuchet, sans-serif;
+$font-semi-bold: "Gill Sans W01 Medium", Arial, sans-serif;
+$font-bold: "Gill Sans W01 Bold", "Arial Black", Arial, "Lucida Grande", sans-serif;
+$font-arial: Arial, Trebuchet, Tahoma, sans-serif;
+
+/////////////////////////////
+//// TRANSITION SETTINGS ////
+/////////////////////////////
+
+// GLOBAL TRANSITION DURATION
+$trans-dur: 0.25s;
+
+// EASING
+$base-ease: ease-in-out;
+$nice-ease: cubic-bezier(0.4, 0, 0.2, 1);
+$bounce-ease: cubic-bezier(0.45, -0.6, 0.605, 1.565);
+$base-trans: all $base-ease $trans-dur;
+$nice-trans: all $nice-ease $trans-dur;

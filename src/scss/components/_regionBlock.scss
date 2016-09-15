@@ -1,0 +1,78 @@
+.regionBlock {
+  height: 600px;
+  position: relative;
+  @media (max-width: 950px) {
+    height: auto;
+  }
+}
+
+.regionBlock-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 3px;
+  padding: 50px;
+  z-index: 2;
+  width: 30%;
+  min-width: 300px;
+  @media (max-width: 950px) {
+    text-align: center;
+    transform: none;
+    position: static;
+    width: 100%;
+  }
+}
+
+.regionBlock-photo,
+.regionBlock-map {
+  @include background-cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  @media (max-width: 950px) {
+    position: relative;
+    width: 100%;
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 40%;
+    }
+  }
+}
+
+.regionBlock-photo {
+  left: 0;
+}
+
+.regionBlock-map {
+  right: 0;
+}
+
+.regionBlock-tagline {
+  position: absolute;
+  top: 55%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 330px;
+  @media (max-width: 950px) {
+    left: 50%;
+    width: 50%;
+  }
+}
+
+.regionBlock-title {
+  font-size: 32px;
+  font-family: $font-bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.regionBlock-subtitle {
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  color: #bbb;
+}

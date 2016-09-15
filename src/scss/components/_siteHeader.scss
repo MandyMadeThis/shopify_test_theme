@@ -1,0 +1,140 @@
+.siteHeader-main {
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.siteHeader-topbar {
+  background: $blue;
+  color: white;
+  padding: 10px 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+}
+
+.siteHeader-topItem {
+  color: white;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  .combo-first & {
+    padding-right: 45px;
+  }
+  .combo-last & {
+    padding-left: 45px;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.siteHeader-nav {
+  font-size: 0;
+  text-align: center;
+  white-space: nowrap;
+  @media (min-width: $mobileNavBreakpoint + 1px) {
+    // ensure mobile nav collapsed style does not apply on desktop
+    height: auto !important;
+  }
+}
+
+.siteHeader-navItem {
+  font-size: 13px;
+  display: inline-block;
+  padding: 30px 25px;
+  border-bottom: 4px solid white;
+  transition: all 0.2s ease-in-out;
+  @media (max-width: $mobileNavBreakpoint + 100px) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  &:hover {
+    border-bottom-color: rgba($blue, 0.5);
+  }
+}
+
+.siteHeader-navItem--active, .siteHeader-navItem--active:hover {
+  border-bottom-color: $blue;
+}
+
+.siteHeader-logo {
+  width: 130px;
+  display: inline-block;
+  max-width: none;
+}
+
+.siteHeader-hamburger {
+  display: none;
+}
+
+.siteHeader-basketIcon {
+  width: 16px;
+  height: 16px;
+  stroke: $blue;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -30px 5px -30px 0;
+  transition: all 0.2s ease-in-out;
+  .siteHeader-basket:hover & {
+    stroke: $white;
+  }
+}
+
+.siteHeader-basketText {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.siteHeader-searchToggle {
+  width: 16px;
+  height: 16px;
+  stroke: $blue;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.siteHeader-searchBar {
+  background: #F9F9F9;
+  padding: 16px 0;
+  display: none;
+}
+
+.siteHeader-searchInput {
+  position: relative;
+  input {
+    width: 100%;
+    max-width: none;
+    background: transparent;
+    border: 0;
+    padding-left: 35px;
+    color: #999;
+    vertical-align: middle;
+    font-size: 25px;
+  }
+}
+
+.siteHeader-searchIcon {
+  width: 23px;
+  height: 23px;
+  stroke: $blue;
+  position: absolute;
+  top: 50%;
+  margin-top: -11px;
+  left: 0;
+  pointer-events: none;
+}
+
+.siteHeader-searchInstructions {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 14px;
+  color: #4E4E4E;
+}
+
+.siteHeader-navExtra {
+  display: none;
+}

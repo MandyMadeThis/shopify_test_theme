@@ -1,0 +1,32 @@
+<sg-nav>
+  <sg-logo>
+    <img src="{{ 'logo.png' | asset_url }}" alt="">
+  </sg-logo>
+</sg-nav>
+
+<div class="siteIcons" style="display: none;">
+  {% include 'icons.svg' %}
+</div>
+
+{% include 'sg-bem' %}
+{% include 'sg-siteHeader' %}
+{% include 'sg-colours' %}
+{% include 'sg-typography' %}
+{% include 'sg-buttons' %}
+{% include 'sg-modals' %}
+{% include 'sg-iconography' %}
+{% include 'sg-cattags' %}
+{% include 'sg-cards' %}
+{% include 'sg-regionBlock' %}
+{% include 'sg-heroBlocks' %}
+{% include 'sg-sliders' %}
+{% include 'sg-basketSteps' %}
+{% include 'sg-rangeSlider' %}
+{% include 'sg-formInputs' %}
+{% include 'sg-searchResults' %}
+{% include 'sg-revealToggle' %}
+{% include 'sg-testimonials' %}
+{% include 'sg-siteFooter' %}
+
+{% comment %} sg-script MUST load last {% endcomment %}
+{% include 'sg-script' %}

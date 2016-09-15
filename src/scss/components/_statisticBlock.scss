@@ -1,0 +1,29 @@
+.statisticBlock {
+  margin-bottom: 28px;
+}
+ 
+.statisticBlock-icon, 
+.statisticBlock-textWrapper {
+  display: inline-block;
+  vertical-align: middle;
+} 
+
+.statisticBlock-icon {
+  width: 50px;
+  height: 50px;
+  stroke: $grey-dark;
+  margin-right: 28px;
+}
+
+.statisticBlock-headline {
+  font-size: 22px;
+  letter-spacing: 2.6px;
+  margin-bottom: 6px;
+}
+
+.statisticBlock-subtext {
+  margin: 0;
+  line-height: 1;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}

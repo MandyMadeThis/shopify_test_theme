@@ -1,0 +1,85 @@
+.basketSteps {
+  text-align: center;
+  display: inline-block;
+  color: $white;
+  counter-reset: li;
+  margin: 0;
+  padding: 0;
+
+  li {
+    &:first-child:before {
+      background: $white;
+      color: $grey-dark;
+    }
+    
+    &:nth-of-type(2):after {
+      left: 68%;
+      width: 88%;
+
+      @include media(palm) {
+        width: 73%;
+      }
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+  }
+}
+
+.basketSteps-step {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  list-style-type: none;
+  margin: 0 18px;
+  position: relative;
+  text-transform: uppercase;
+
+  @include media(palm) {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    margin: 0 8px;
+  }
+
+  &:before {
+    background: none;
+    border-radius: 50%;
+    border: 1.5px solid #FFFFFF;
+    content: counter(li);
+    counter-increment: li;
+    display: block;
+    font-size: 14px;
+    width: 22px;
+    height: 22px;
+    line-height: 1.5;
+    margin: 0 auto 12px;
+    text-align: center;
+
+    @include media(palm) {
+      border: 1px solid #FFFFFF;
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+    }
+  }
+
+  // Lines between counter
+  &:after {
+    content: "";
+    display: block;
+    height: 1.5px;
+    background: $white;
+    position: absolute;
+    top: 10px;
+    width: 160%;
+    left: 84%;
+
+    @include media(palm) {
+      height: 1px;
+      top: 9px;
+      width: 52px;
+      left: 33px
+    }
+  }
+}

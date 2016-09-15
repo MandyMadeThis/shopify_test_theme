@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+    <path d="M10.5166667 25.75296C10.5166667 17.3385267 17.3387333 10.51646 25.7531667 10.51646M25.75296 10.5166667C34.1673933 10.5166667 40.98946 17.3387333 40.98946 25.7531667 40.98946 34.1676 34.1673933 40.9896667 25.75296 40.9896667 17.3385267 40.9896667 10.51646 34.1676 10.51646 25.7531667M13.2871367 25.75296C13.2871367 18.86786 18.86817 13.2868267 25.75327 13.2868267" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M25.7536833,13.2864133 C32.6387833,13.2864133 38.2198167,18.8674467 38.2198167,25.7525467 C38.2198167,32.6376467 32.6387833,38.2197133 25.7536833,38.2197133 C18.8685833,38.2197133 13.28755,32.6376467 13.28755,25.7525467" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M22.98187,28.5254967 C22.98187,30.0558633 24.2229033,31.2968967 25.7512033,31.2968967 C27.2826033,31.2968967 28.5226033,30.0558633 28.5226033,28.5254967 C28.5226033,26.9940967 27.2826033,25.7530633 25.7512033,25.7530633 L25.7543033,25.7530633 C24.2229033,25.7530633 22.98187,24.5140967 22.98187,22.98373 C22.98187,21.4533633 24.2229033,20.21233 25.7543033,20.21233 C27.2826033,20.21233 28.5226033,21.4533633 28.5226033,22.98373 C28.5226033,21.4533633 27.2826033,20.21233 25.7543033,20.21233 C24.2229033,20.21233 22.98187,21.4533633 22.98187,22.98373 C22.98187,24.5140967 24.2229033,25.7530633 25.7543033,25.7530633 L25.7512033,25.7530633 C27.2826033,25.7530633 28.5226033,26.9940967 28.5226033,28.5254967 C28.5226033,30.0558633 27.2826033,31.2968967 25.7512033,31.2968967 C24.2229033,31.2968967 22.98187,30.05483 22.98187,28.5254967 L22.98187,28.5254967 Z" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="25.751 31.297 25.751 32.681" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="25.751 18.826 25.751 20.213" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="25.754 38.219 25.754 40.99" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="38.219 25.753 40.99 25.753" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="14.979 14.979 16.939 16.94" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="34.569 34.568 36.528 36.528" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="14.979 36.527 16.939 34.567" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="34.569 16.939 36.528 14.978" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="33.432 22.573 35.351 21.781" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="16.155 29.731 18.076 28.935" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="28.933 18.078 29.729 16.157" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="21.778 35.352 22.573 33.434" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="22.574 18.075 21.778 16.157" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="29.729 35.352 28.934 33.432" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="18.076 22.573 16.155 21.781" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="35.35 29.731 33.431 28.935" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="25" cy="25" r="25"/>
+  </g>
+</svg>

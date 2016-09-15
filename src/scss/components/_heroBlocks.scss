@@ -1,0 +1,95 @@
+.heroBlock {
+  @include background-cover;
+  padding: 8% 13%;
+  position: relative;
+  text-align: center;
+
+  @include media(palm) {
+    padding: 40px;
+  }
+}
+
+.heroBlock--fade {
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    bottom: 0;
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      $black
+    );
+    z-index: 0;
+  }
+}
+
+.heroBlock--small {
+  padding: 0;
+  height: 220px;
+  text-align: center;
+
+  > * {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .heroBlock-title {
+    color: $white;
+  }
+}
+
+.heroBlock--topUp {
+  text-align: center;
+  padding: 70px 30px 187px;
+  margin-bottom: 60px;
+
+  @include media(palm) {
+    padding: 27px 30px 70px;
+
+    &:before {
+      content: "";
+      background: $white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+
+  .heroBlock-title {
+    color: $white;
+
+    @include media(palm) {
+      position: relative;
+      color: $grey-dark;
+      line-height: 1.3;
+      font-size: 25px;
+      z-index: 2;
+    }
+  }
+}
+
+.heroBlock-circularImage {
+  width: 207px;
+  height: 207px;
+  display: inline-block;
+  border: 5px solid $white;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -55px;
+  z-index: 1;
+
+  @include media(palm) {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 2px 4px 0 $grey-light;
+  }
+}

@@ -1,0 +1,155 @@
+<div class="container">
+  <div class="grid grid--middle grid--center">
+    <div class="grid1of5 filter">
+      <label>Sort by Gender</label>
+      <select class="coll-picker">
+        <option value="all">All</option>
+        {% for c in collections %}
+          {% unless c.handle == 'all' %}
+            {% if collection.handle == c.handle %}
+              <option value="{{ c.handle }}" selected>{{ c.title }}</option>
+            {% else %}
+              <option value="{{ c.handle }}">{{ c.title }}</option>
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </select>
+    </div>
+{% comment %}    <div class="grid1of5 filter">
+      <label>Sort by country</label>
+      <select class="coll-filter">
+        <option value="">All</option>
+        {% for country in collection.all_vendors %} 
+          <option value="{{ country | handle }}">{{ country }}</option>
+        {% endfor %}
+      </select>
+    </div>{% endcomment %}
+    <div class="grid1of5 filter">
+      <label>Sort by Birthday</label>
+      <select class="coll-filter">
+        <option value="">All</option>
+        {% assign keyword = 'birthday:' %}
+        {% for tag in collection.tags %}
+          {% if tag contains keyword %}
+              <option value="{{ tag | handle }}">{{ tag | remove: keyword }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+    <div class="grid1of5 filter">
+      <label>Sort by Birth Month</label>
+      <select class="coll-filter">
+        <option value="">All</option>
+        {% assign keyword = 'month:' %}
+        {% for tag in collection.tags %}
+          {% if tag contains keyword %}
+              <option value="{{ tag | handle }}">{{ tag | remove: keyword }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+   <div class="grid1of5 filter">
+     <label>Sort by Birth Year</label>
+     <select class="coll-filter">
+      <option value="">All</option>
+       {% assign keyword = 'birthyear:' %}
+       {% for tag in collection.tags %}
+         {% if tag contains keyword %}
+             <option value="{{ tag | handle }}">{{ tag | remove: keyword }}</option>
+         {% endif %}
+       {% endfor %}
+     </select>
+   </div>
+  </div>
+  
+  <div class="productContainer">
+    {% paginate collection.products by 50 %}
+    <h3>There are: {{ paginate.items }} Available</h3>
+    <ul>
+      {% for product in collection.products %}
+        <li>{{ product.title }}</li>
+      {% endfor %}
+    </ul>
+    {% endpaginate %}
+  </div>
+  
+  {% if paginate.pages > 1 %}
+    <hr>
+    <div class="pagination">
+      {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+    </div>
+  {% endif %}
+</div>
+
+
+<script>
+  /* Product Tag Filters - Good for any number of filters on any type of collection page.
+     Give you product tag filter select element a class of coll-filter.
+     Give your collection select a class of coll-picker.
+     Brought to you by Caroline Schnapp. */
+  Shopify.queryParams = {};
+
+  if (location.search.length) {
+    for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+      aKeyValue = aCouples[i].split('=');
+      if (aKeyValue.length > 1) {
+        Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+      }
+    }
+  }
+
+  $('.coll-picker').change(function() {
+    if ($(this).val()) {
+      location.href = '/collections/' + $(this).val();
+    }
+    else {
+      location.href = '/collections/all';
+    }
+  });
+
+  var collFilters = $('.coll-filter');
+
+  collFilters.change(function() {
+    delete Shopify.queryParams.page;
+    var newTags = [];
+
+    collFilters.each(function() {
+      if ($(this).val()) {
+        newTags.push($(this).val());
+      }
+    });
+
+    {% if collection.handle %}
+
+      var newURL = '/collections/{{ collection.handle }}';
+
+      if (newTags.length) {
+        newURL += '/' + newTags.join('+');
+      }
+
+      var search = $.param(Shopify.queryParams);
+
+      if (search.length) {
+        newURL += '?' + search;
+      }
+      location.href = newURL;
+
+    {% else %}
+      if (newTags.length) {
+        Shopify.queryParams.constraint = newTags.join('+');
+      }
+      else {
+        delete Shopify.queryParams.constraint;
+      }
+
+      location.search = $.param(Shopify.queryParams);
+    {% endif %}
+  });
+</script>
+
+
+
+
+
+
+

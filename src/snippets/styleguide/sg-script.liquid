@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="{{ 'styleguide.css' | asset_url }}">
+
+<sg-toggle />
+
+<script type="text/javascript">
+  (function () {
+    var navElement, linkTarget
+    navElement = document.querySelector('sg-nav')
+
+    forEachHeading(function (heading) {
+      if (isPrimary(heading)) createNavGroup()
+      var navLink = createNavLink(heading)
+      var target = linkTarget || navElement
+      target.appendChild(navLink)
+    })
+
+    function isPrimary (heading) {
+      return heading.className.indexOf('sg-h1') > -1
+    }
+
+    function createNavGroup () {
+      var navGroup = document.createElement('div')
+      navElement.appendChild(navGroup)
+      linkTarget = navGroup
+    }
+
+    function createNavLink (heading) {
+      var link = document.createElement('a')
+      link.text = heading.text
+      link.href = heading.hash
+      return link
+    }
+
+    function forEachHeading (callback) {
+      Array.prototype.slice.call(
+        document.querySelectorAll(sgHeadingsSelector())
+      ).forEach(callback)
+    }
+
+    function sgHeadingsSelector () {
+      return [1, 2, 3, 4, 5, 6].map(function (headingNumber) {
+        return '.sg-h' + headingNumber
+      }).join(', ')
+    }
+  })()
+
+  $(document).ready(function () {
+    // close nav if it was closed in a previous session
+    if (localStorage.getItem('sg-nav') === 'hidden') {
+      $('body').addClass('sg-body--toggled')
+    }
+
+    // toggle styleguide nav visibility
+    $('sg-toggle').on('click', function () {
+      var navState = localStorage.getItem('sg-nav')
+      if (navState === 'visible') {
+        localStorage.setItem('sg-nav', 'hidden')
+        $('body').addClass('sg-body--toggled')
+      } else {
+        localStorage.setItem('sg-nav', 'visible')
+        $('body').removeClass('sg-body--toggled')
+      }
+    })
+
+    // go to section on page load if hash is present
+    var hash = window.location.hash.substring(1)
+    if (hash) {
+      $('html, body').animate({
+        scrollTop: $('#' + hash).offset().top - 50
+      }, 500);
+    }
+  })
+</script>

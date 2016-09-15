@@ -1,0 +1,52 @@
+<!doctype html>
+<!--[if lt IE 8]><html class="no-js lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {% if template == 'index' %}
+      <title>{{ shop.name }} | {{ page_title }}</title>
+      {% elsif template == '404' %}
+      <title>Page Not Found | {{ shop.name }}</title>
+    {% else %}
+      <title>{{ page_title }} | {{ shop.name }}</title>
+    {% endif %}
+    {% if page_description %}
+      <meta name="description" content="{{ page_description }}" />
+    {% endif %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <meta name="viewport" content="width=device-width" />
+    {{ content_for_header }}
+    {{ '//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js' | script_tag }}
+    <link media="all" rel="stylesheet" type="text/css" href="//fast.fonts.net/cssapi/2f2b3491-42da-4b55-a4d3-dc599b71b772.css">
+    {{ 'vendor-styles.css' | asset_url | stylesheet_tag }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body id="page-{{ page_title | handle | truncatewords: 1, '' }}" class="{% if customer %}customerLoggedIn {% endif %}{% if page.handle == 'styleguide'%}sg-body {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}, Handle: {{page.handle}}">
+  <div class="siteIcons" style="display: none;">{% include 'icons.svg' %}</div>
+  {% if page.handle == 'styleguide' %}
+    {% include 'sg-index' %}
+  {% elsif  page.handle == 'ways-to-give'%}
+      {% include 'header' %}
+      {% include 'page-WaysToGive-index' %}
+      {% include 'footer' %}
+  {% else %}
+      {% include 'header' %}
+      {{ content_for_layout }}
+      {% include 'footer' %}
+  {% endif %} {% comment %} end styleguide check {% endcomment %}
+
+  {% comment %}
+    FOR DEVELOPMENT ONLY, PLEASE DELETE FOR PRODUTION READY THEMES:
+    THE FOLLOWING LINES DISPLAY WHAT TEMPLATE & PAGE ARE RENDERING ON THE SHOPIFY STORE
+  {% endcomment %}
+  {% if page.handle != 'styleguide' %}
+  <p style="display: inline-block; background: yellow; border: 1px solid #000000; padding: 1em; font-weight: 700;">Current template: templates/{{ template }}.liquid</p>
+  <p style="display: inline-block; background: #7FFF00; border: 1px solid #000000; padding: 1em; font-weight: 700;">Handle: {{ page.handle }}</p>
+  {% endif %}
+  {{ 'vendor-scripts.js'  | asset_url | script_tag }}
+  {{ 'app.js'  | asset_url | script_tag }}
+  </body>
+</html>

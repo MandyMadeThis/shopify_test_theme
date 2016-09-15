@@ -1,0 +1,103 @@
+<sg-section>
+  <a href="#cards" class="sg-h1" id="cards">Cards</a>
+  
+  <sg-p>Standard Cards</sg-p>
+  <sg-example>
+    <div class="card">
+      <h2 class="card-heading">Make a Lasting Impact on a Child's Life</h2>
+      <p>When you sponsor a child you sponsor an entire community.</p>
+      <button>Sponsor a child</button>
+    </div>
+  </sg-example>
+
+  <a href="#catCards" class="sg-h3" id="catCards">Category Card</a>
+  <sg-p>These cards are usually used in <c>.heroBlocks</c></sg-p>
+  <sg-example>
+    <div class="card card--category">
+      <div class="catTag catTag--donation">Donation</div>
+      <h2 class="card-heading">End Child Poverty</h2>
+      <p>Hunger is a force that is causing suffering for millions of children all over the world. We're hoping to change that</p>
+    </div>
+  </sg-example>
+
+  <a href="#stacked-image-card" class="sg-h3" id="stacked-image-card">Stacked Image Card</a>
+  <sg-example>
+    <div class="card card--imageCard card--stack">
+      <div class="catTag catTag--donation">Donation</div>
+      <div class="card-image" style="background-image: url({{ 'ODN-donate-resources-@2x.jpg' | asset_img_url: '840x' }});"></div>
+      <div class="card-innerFlexWrapper">
+        <div class="card-textWrapper">
+          <h2 class="card-heading">Donate Resources</h2>
+          <p>Create opportunities and bring hope for kids and their families living in difficult circumstances</p>
+          <a href="#cards" class="textLink">Donate</a>
+        </div>
+      </div>
+    </div>
+  </sg-example>
+
+  <a href="#featured-left-card" class="sg-h3" id="featured-left-card">Featured Left Image Card</a>
+  <sg-example>
+    <div class="card card--imageCard card--featured card--featuredImageLeft">
+      <div class="catTag catTag--featCause">Featured Cause</div>
+      <div class="card-innerFlexWrapper">
+        <div class="card-textWrapper">
+          <h2 class="card-heading">End Child Poverty</h2>
+          <p>Hunger is affecting millions of children around the world. World Vision is supporting over 10 countries to provide food to communities in need</p>
+          <a href="#cards" class="textLink">Feed Change</a>
+        </div>
+      </div>
+      <div class="card-image" style="background-image: url({{ 'ODN-world-vision-magazine-@2x.jpg' | asset_img_url: '932x' }});">
+      </div>
+    </div>
+  </sg-example>
+
+  <a href="#featured-right-card" class="sg-h3" id="featured-right-card">Featured Right Image Card</a>
+  <sg-example>
+    <div class="card card--imageCard card--featured card--featuredImageRight">
+      <div class="catTag catTag--featCause">Featured Cause</div>
+      <div class="card-innerFlexWrapper">
+        <div class="card-textWrapper">
+          <h2 class="card-heading">Support Syria</h2>
+          <p>Support the millions of children and families affected by the conflict. World Vision is providing food, support, and medical assistants to the victims of the crisis.</p>
+          <a href="#cards" class="textLink">Donate to the crisis</a>
+        </div>
+      </div>
+      <div class="card-image" style="background-image: url({{ 'ODN-world-vision-syria-@2x.jpg' | asset_img_url: '932x' }});">
+      </div>
+    </div>
+  </sg-example>
+
+  <a href="#sponsorship-card" class="sg-h3" id="sponsorship-card"> Sponsorship Card</a>
+  <sg-example style="padding-top: 150px;">
+    <div class="sponsorshipCard">
+      <div class="sponsorshipCard-image" style="background-image: url({{ 'wv-child-photo3.jpg' | asset_img_url: '480x480' }});" role="img" aria-label="Photo of Paribartan"></div>
+      <svg class="sponsorshipCard-videoLink"><use xlink:href="#icon--videoCamera"></use></svg>
+      <h3 class="sponsorshipCard-name">Paribartan</h3>
+      <div class="sponsorshipCard-iconInfoBlockWrap">
+        <div class="iconInfoBlock">
+          <svg class="iconInfoBlock-icon"><use xlink:href="#icon--boy"></use></svg>
+          <h6 class="iconInfoBlock-category">Gender</h6>
+          <h5 class="iconInfoBlock-info">Boy</h5>
+        </div>
+        <div class="iconInfoBlock">
+          <svg class="iconInfoBlock-icon"><use xlink:href="#icon--world"></use></svg>
+          <h6 class="iconInfoBlock-category">Country</h6>
+          <h5 class="iconInfoBlock-info">Nepal</h5>
+        </div>
+        <div class="iconInfoBlock">
+          <svg class="iconInfoBlock-icon"><use xlink:href="#icon--birthday"></use></svg>
+          <h6 class="iconInfoBlock-category">Birthday</h6>
+          <h5 class="iconInfoBlock-info">Sept 30, 2009</h5>
+          <h5 class="iconInfoBlock-info iconInfoBlock-info--stack">7 Years Old</h5>
+        </div>
+      </div>
+      <button class="button button--small">Meet Paribartan</button>
+      <div class="sponsorshipCard-bioWrap">
+        <p class="sponsorshipCard-bio">My name is Paribartan. I live with my parents. I have one brother and 2 sisters. I help at home by carrying water. I am in Grade 1. I am in primary school and my favourite subject is a foreign language. I like to play ball games. I am in good health.</p>
+        <button class="button button--small">Select Paribartan &amp; learn more</button>
+        <a href="#" class="textLink textLink--scrollDown">Scroll down to learn more</a>
+      </div>
+      <div class="sponsorshipCard-close"></div>
+    </div>
+  </sg-example>
+</sg-section>
